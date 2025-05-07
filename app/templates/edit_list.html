@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit List</title>
+</head>
+<body>
+    <h2>Edit List Name</h2>
+    {% if session.username %}
+    <p>Welcome, {{ session.username }} | <a href="{{ url_for('logout') }}">Logout</a></p>
+    {% endif %}
+
+    <form method="POST">
+        List Name: <input type="text" name="name" value="{{ list.name }}" required><br>
+        <input type="submit" value="Update List">
+    </form>
+
+    <p><a href="{{ url_for('view_lists') }}">Back to My Lists</a></p>
+</body>
+</html>
